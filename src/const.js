@@ -8,7 +8,7 @@ export const MAP_MODE = {
   ISOMETRIC: "equidistance",
 };
 
-export const ROUND_TYEP = {
+export const ROUND_TYPE = {
   FLOOR: 0,
   CEIL: 1,
 };
@@ -17,10 +17,3 @@ export const POS_ATT = {
   X: "x",
   Y: "y",
 };
-
-export const SCRATCH_TYEP = {
-  GANDI: "gandi", // gandi 的 scratch-render 有些特殊需要改一下
-  TURBOWARP: "turbowarp",
-};
-
-export const SCRATCH_BUILD_TYPE = SCRATCH_TYEP.GANDI;

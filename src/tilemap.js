@@ -1,4 +1,4 @@
-import { MAP_MODE, ROUND_TYEP } from "./const";
+import { MAP_MODE, ROUND_TYPE } from "./const";
 import TilemapData from "./tilemap-data";
 import { range, round } from "./utils";
 
@@ -44,7 +44,7 @@ class Tilemap {
         this.tileSize.y = this.retlTileSize.y;
         break;
       default:
-        throw new Error("你这样我很难帮你办事呀");
+        throw new Error(`Unknown map mode ${this.mode}`);
     }
     this.tileSize.x = this.retlTileSize.x;
     this.nativeSize = this.app.renderer._nativeSize;
@@ -65,8 +65,8 @@ class Tilemap {
       y: this.camera.y % this.tileSize.y,
     };
     this.tileStart = {
-      x: -round(this.camera.x / this.tileSize.x, ROUND_TYEP.FLOOR),
-      y: round(this.camera.y / this.tileSize.y, ROUND_TYEP.FLOOR),
+      x: -round(this.camera.x / this.tileSize.x, ROUND_TYPE.FLOOR),
+      y: round(this.camera.y / this.tileSize.y, ROUND_TYPE.FLOOR),
     };
     this.drawTileNum = {
       x: Math.ceil(this.nativeSize[0] / (this.tileSize.x * this.scale.x)) + 1,

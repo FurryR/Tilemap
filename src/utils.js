@@ -1,5 +1,5 @@
 import Scratch from "Scratch";
-import { ROUND_TYEP } from "./const";
+import { ROUND_TYPE } from "./const";
 
 export const createBuffer = (gl, bufferType, size, usage) => {
   let buffer = gl.createBuffer();
@@ -46,12 +46,12 @@ export const floorNum = (v) => {
 export const round = (num, type) => {
   const f = num > 0 ? 1 : -1;
   switch (type) {
-    case ROUND_TYEP.CEIL:
+    case ROUND_TYPE.CEIL:
       return Math.ceil(Math.abs(num)) * f;
-    case ROUND_TYEP.FLOOR:
+    case ROUND_TYPE.FLOOR:
       return Math.floor(Math.abs(num)) * f;
     default:
-      throw new Error("你这样我很难帮你办事哟！");
+      throw new Error(`Unknown rounding type ${type}`);
   }
 };
 
